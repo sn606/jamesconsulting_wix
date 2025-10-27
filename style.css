@@ -239,7 +239,7 @@ body {
   padding: 60px 20px;
   flex-wrap: wrap;
 
-  background-image: url(images/imgg2.jpg);
+  background-image: url(./images/imgg2.jpg);
   background-color: #d7e6ef; 
   background-size: cover;
   background-position: center;
