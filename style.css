@@ -518,7 +518,7 @@ body {
 
 .footer-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center; 
   align-items: flex-start;
   flex-wrap: wrap;
   max-width: 1100px;
@@ -527,8 +527,9 @@ body {
 }
 
 .footer-box {
-  flex: 1;
+  flex: 0 0 auto; 
   min-width: 250px;
+  text-align: center; 
 }
 
 .socials-title {
@@ -550,6 +551,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  align-items: center; 
 }
 
 .footer-menu a {
@@ -562,7 +564,6 @@ body {
 .footer-menu a:hover {
   color: #00aced;
 }
-
 
 .socials-icons {
   display: flex;
@@ -581,18 +582,19 @@ body {
   color: #00aced;
 }
 
-
-
+/* responsive  */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
+    align-items: center;
   }
 
-  .socials-icons {
-    justify-content: center;
+  .footer-box {
+    min-width: unset;
   }
 }
+
 
 
 
@@ -769,3 +771,87 @@ body {
     font-size: 2.2rem;
   }
 }
+
+
+
+
+
+
+
+/* navigacia */
+/* ------------------- NAVBAR ------------------- */
+
+/* Hide checkbox completely */
+.nav-toggle {
+  position: absolute; /* removes it from flow */
+  opacity: 0;         /* invisible */
+  width: 0;
+  height: 0;
+  z-index: -1;        /* behind everything */
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none;      /* hidden on desktop */
+  position: absolute;
+  top: 50%;
+  right: 20px;        /* right side */
+  transform: translateY(-50%);
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+  z-index: 1100;      /* above menu */
+}
+
+/* Desktop nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #00aced;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide desktop nav links initially */
+  .nav-links {
+    position: absolute;
+    top: 70px;        /* below navbar */
+    right: 20px;
+    flex-direction: column;
+    background-color: #0b3c5d;
+    padding: 20px;
+    border-radius: 8px;
+    gap: 15px;
+    display: none;     /* hidden by default */
+    width: 200px;
+    z-index: 1000;
+  }
+
+  .nav-links li {
+    text-align: right;
+  }
+
+  /* Show nav when checkbox is checked */
+  .nav-toggle:checked + .hamburger + nav .nav-links {
+    display: flex;
+  }
+}
+
