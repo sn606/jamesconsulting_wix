@@ -227,6 +227,27 @@ body {
 
 
 
+@media (max-width: 768px) {
+  .details {
+    padding-left: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .service-cards,
+  .clients-logos,
+  .testimonial-cards {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .details-box,
+  .service-card,
+  .testimonial-card {
+    margin: 0 auto;
+  }
+}
 
 
 
@@ -319,6 +340,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
+  align-items: center;
 }
 
 
@@ -353,8 +375,16 @@ body {
   color: #0b3c5d;
   text-decoration: none;
   transition: all 0.3s ease;
+  display: inline-block;
+  width: auto;
+  max-width: 260px;
+  align-self: center;
+  margin: 28px auto 0;
+  box-sizing: border-box;
 
 }
+
+
 
 .services-btn:hover {
   background-color: #0b3c5d;
@@ -779,31 +809,27 @@ body {
 
 
 /* navigacia */
-/* ------------------- NAVBAR ------------------- */
 
-/* Hide checkbox completely */
 .nav-toggle {
-  position: absolute; /* removes it from flow */
-  opacity: 0;         /* invisible */
+  position: absolute; 
+  opacity: 0;  /
   width: 0;
   height: 0;
   z-index: -1;        /* behind everything */
 }
 
-/* Hamburger icon */
 .hamburger {
   display: none;      /* hidden on desktop */
   position: absolute;
   top: 50%;
-  right: 20px;        /* right side */
+  right: 20px; 
   transform: translateY(-50%);
   font-size: 1.8rem;
   cursor: pointer;
   color: white;
-  z-index: 1100;      /* above menu */
+  z-index: 1100; 
 }
 
-/* Desktop nav links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -823,24 +849,22 @@ body {
   color: #00aced;
 }
 
-/* Mobile styles */
 @media screen and (max-width: 768px) {
   /* Show hamburger */
   .hamburger {
     display: block;
   }
 
-  /* Hide desktop nav links initially */
   .nav-links {
     position: absolute;
-    top: 70px;        /* below navbar */
+    top: 70px;      
     right: 20px;
     flex-direction: column;
     background-color: #0b3c5d;
     padding: 20px;
     border-radius: 8px;
     gap: 15px;
-    display: none;     /* hidden by default */
+    display: none;
     width: 200px;
     z-index: 1000;
   }
@@ -849,9 +873,114 @@ body {
     text-align: right;
   }
 
-  /* Show nav when checkbox is checked */
   .nav-toggle:checked + .hamburger + nav .nav-links {
     display: flex;
   }
 }
 
+
+
+
+
+
+/* plans page */
+.plans-section {
+  padding: 80px 20px;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.plans-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.plan-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 30px 20px;
+  width: 280px;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.plan-card.best-value {
+  background-color: #e6e6e6;
+}
+
+.best-value-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0b3c5d;
+  color: #fff;
+  padding: 5px 15px;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.plan-price {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0b3c5d;
+  margin: 10px 0;
+}
+
+.plan-description {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.plan-btn {
+  background-color: #0b3c5d;
+  color: #fff;
+  padding: 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.plan-btn:hover {
+  background-color: #092c44;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-top: 15px;
+}
+
+.plan-features li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #0b1a2e;
+}
+
+.plan-features li i {
+  color: #0b3c5d;
+  margin-right: 8px;
+}
+
+@media (max-width: 900px) {
+  .plans-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
